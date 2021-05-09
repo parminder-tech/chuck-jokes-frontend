@@ -84,7 +84,7 @@
     <div class="bg_grey">
       <div class="container">
         <div class="back_btn">
-          <a href="#">
+          <a href="/">
             <img src="@/assets/images/back.png" alt="..." />
           </a>
         </div>
@@ -109,17 +109,7 @@
                 </div>
                 <div class="view_joke_content">
                   <p>
-                    An old grandma brings a bus driver a bag of peanuts every
-                    day.
-                  </p>
-                  <p>
-                    First the bus driver enjoyed the peanuts but after a week of
-                    eating them he asked: "Please granny, don't bring me peanuts
-                    anymore. Have them yourself.".
-                  </p>
-                  <p>
-                    The granny answers: "You know, I don't have teeth anymore. I
-                    just prefer to suck the chocolate around them."
+                    {{ data.value }}
                   </p>
                 </div>
               </div>
@@ -199,3 +189,22 @@
     <!-- MAIN SECTION END -->
   </div>
 </template>
+<script>
+export default {
+  name: "ViewJokes",
+  data() {
+    return {
+      data: {},
+      jokeID: "",
+    };
+  },
+
+  mounted() {
+    console.log("Chaklo", this.$route.params.id);
+    this.jokeID = this.$route.params.id;
+    this.$store.getters.client.get(`jokes/${this.jokeID}`).then((response) => {
+      this.data = response.data;
+    });
+  },
+};
+</script>

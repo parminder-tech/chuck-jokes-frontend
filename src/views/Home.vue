@@ -1,13 +1,3 @@
-<script>
-export default {
-  name: "Home",
-
-  mounted() {
-    console.log("PARMINDER");
-  },
-};
-</script>
-
 <template>
   <div>
     <!-- BANNER START -->
@@ -95,26 +85,8 @@ export default {
       <div class="container">
         <div class="home_tags">
           <ul class="row no-gutters m-0 p-0">
-            <li class="col-vc">
-              <a href="#">Adult jokes</a>
-            </li>
-            <li class="col-vc">
-              <a href="#">Dad jokes</a>
-            </li>
-            <li class="col-vc">
-              <a href="#">Christmas Jokes</a>
-            </li>
-            <li class="col-vc">
-              <a href="#">Job jokes</a>
-            </li>
-            <li class="col-vc">
-              <a href="#">Birthday jokes</a>
-            </li>
-            <li class="col-vc">
-              <a href="#">Social jokes</a>
-            </li>
-            <li class="col-vc">
-              <a href="#">Puns</a>
+            <li class="col-vc" v-for="category in categories" :key="category">
+              <a href="#">{{ category }} JOKES </a>
             </li>
             <li class="col-vc outlined_btn">
               <a href="#">View All <i class="far fa-long-arrow-down"></i></a>
@@ -132,153 +104,31 @@ export default {
         </div>
 
         <div class="joke_list row no-gutters">
-          <div class="col-vc">
+          <div v-for="joke in paginatedData" :key="joke.id" class="col-vc">
             <div class="joke_item">
-              <h4 class="joke_title">
+              <h4 class="joke_title" v-if="joke.categories.length > 0">
                 <img
                   src="@/assets/images/flash-yellow.png"
                   alt="..."
                   class="mr-5"
                 />
-                Lawyer Joke
+                {{ joke.categories.toString() }} Jokes
               </h4>
-              <div class="joke_content">
-                <p>
-                  A lawyer dies and goes to Heaven. "There must be some
-                  mistake," the lawyer argues. "I'm too young to die. I'm only
-                  55." "Fifty-five?" says Saint Peter. "No, according to out
-                  calculations, you're 82." "How'd you get that?" the lawyer
-                  asks. Answers St. Peter, "We added up your time sheets."
-                </p>
-              </div>
-              <div class="joke_btn">
-                <a href="view_joke.html"
-                  >See Stats <i class="far fa-long-arrow-right"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-vc">
-            <div class="joke_item">
-              <h4 class="joke_title">
+              <h4 class="joke_title" v-else>
                 <img
                   src="@/assets/images/flash-yellow.png"
                   alt="..."
                   class="mr-5"
                 />
-                Doctor Joke
+                Uncategorized
               </h4>
               <div class="joke_content">
                 <p>
-                  I’d never had surgery, and I was nervous. “This is a very
-                  simple, noninvasive procedure,” the anesthesiologist reassured
-                  me. I felt better, until … “Heck,” he continued, “you have a
-                  better chance of dying from the anesthesia than the surgery
-                  itself.”
+                  {{ joke.value }}
                 </p>
               </div>
               <div class="joke_btn">
-                <a href="view_joke.html"
-                  >See Stats <i class="far fa-long-arrow-right"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-vc">
-            <div class="joke_item">
-              <h4 class="joke_title">
-                <img
-                  src="@/assets/images/flash-yellow.png"
-                  alt="..."
-                  class="mr-5"
-                />
-                Business Joke
-              </h4>
-              <div class="joke_content">
-                <p>
-                  I went to my boss at work and said, "I need a raise. Three
-                  other companies are after me." He said, "Really? Which other
-                  companies are after you?" I said, "The electric company, the
-                  gas company and the phone company.
-                </p>
-              </div>
-              <div class="joke_btn">
-                <a href="view_joke.html"
-                  >See Stats <i class="far fa-long-arrow-right"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-vc">
-            <div class="joke_item">
-              <h4 class="joke_title">
-                <img
-                  src="@/assets/images/flash-yellow.png"
-                  alt="..."
-                  class="mr-5"
-                />
-                Police joke
-              </h4>
-              <div class="joke_content">
-                <p>
-                  An officer conducting speed enforcement stops a young man for
-                  traveling in excess of 40 mph over the speed limit. The
-                  officer approaches the driver and says, "Well, 40 over...I
-                  been waiting for you to come along all day." Without pause,
-                  the young man replies, "I got here as fast as I could!"
-                </p>
-              </div>
-              <div class="joke_btn">
-                <a href="view_joke.html"
-                  >See Stats <i class="far fa-long-arrow-right"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-vc">
-            <div class="joke_item">
-              <h4 class="joke_title">
-                <img
-                  src="@/assets/images/flash-yellow.png"
-                  alt="..."
-                  class="mr-5"
-                />
-                Doctor joke
-              </h4>
-              <div class="joke_content">
-                <p>
-                  An officer observes a woman standing in the middle of the
-                  street. He approaches her and asks, "Are you okay?" The woman
-                  replies, "Yes, but how do I get to the hospital?" The officer
-                  replies, "Just keep standing there."
-                </p>
-              </div>
-              <div class="joke_btn">
-                <a href="view_joke.html"
-                  >See Stats <i class="far fa-long-arrow-right"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-vc">
-            <div class="joke_item">
-              <h4 class="joke_title">
-                <img
-                  src="@/assets/images/flash-yellow.png"
-                  alt="..."
-                  class="mr-5"
-                />
-                Boss joke
-              </h4>
-              <div class="joke_content">
-                <p>
-                  My boss asked me to put a joke on the first slide of the
-                  presentation…apparently a picture of my pay slip wasn’t what
-                  he was looking for.
-                </p>
-              </div>
-              <div class="joke_btn">
-                <a href="view_joke.html"
+                <a @click="viewJokeStats(joke.id)"
                   >See Stats <i class="far fa-long-arrow-right"></i
                 ></a>
               </div>
@@ -287,10 +137,67 @@ export default {
         </div>
 
         <div class="view_more_btn">
-          <a href="#">View More <i class="far fa-long-arrow-down"></i></a>
+          <a @click="updateRow()"
+            >View More <i class="far fa-long-arrow-down"></i
+          ></a>
         </div>
       </div>
     </div>
     <!-- MAIN SECTION END -->
   </div>
 </template>
+
+<script>
+export default {
+  name: "Home",
+  data() {
+    return {
+      paginatedData: [],
+      data: [],
+      categories: [],
+    };
+  },
+  methods: {
+    getAllJokes() {
+      this.$store.getters.client
+        .get("/jokes/search?query=all")
+        .then((response) => {
+          this.data = response.data.result;
+          // push first 12 values to the array
+          for (var i = 0; i < 12; i++) {
+            this.paginatedData.push(this.data[i]);
+          }
+        });
+    },
+    getCategories() {
+      console.log("category");
+      this.$store.getters.client.get("jokes/categories").then((response) => {
+        this.categories = response.data;
+        console.log("this.categories", this.categories);
+      });
+    },
+    updateRow() {
+      // plus fixed 12 to update the pagination length
+      var calculateLength = this.paginatedData.length + 12;
+      // update in the array
+      for (var i = this.paginatedData.length; i < calculateLength; i++) {
+        this.paginatedData.push(this.data[i]);
+      }
+    },
+    viewJokeStats(event) {
+      this.$router.push({ name: "ViewJokes", params: { id: event } });
+    },
+  },
+  mounted() {
+    this.getAllJokes();
+    this.getCategories();
+  },
+};
+</script>
+
+<style scoped>
+a,
+a label {
+  cursor: pointer;
+}
+</style>
