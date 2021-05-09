@@ -1,0 +1,39 @@
+.footer_banner_area {
+    position: relative;
+    .banner_img {
+        width: 100%;
+        min-height: 160px;
+        object-fit: cover;
+    }
+    .upper_banner {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        display: inline-flex;
+        align-items: center;
+        a {
+            color: $primary_color;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            i {
+                margin-left: 8px;
+                font-size: 20px;
+                font-weight: 300;
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+        h3 {
+            color: $white;
+            font-size: 16px;
+            font-weight: 500;
+            margin: 0 0 15px;
+            text-transform: uppercase;
+            line-height: 24px;
+        }
+    }
+}

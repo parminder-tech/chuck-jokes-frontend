@@ -1,0 +1,248 @@
+.top_header {
+    background-color: $body_color;
+    .left_area {
+        max-width: 100%;
+        width: 150px;
+        padding: 8px 0;
+    }
+    .right_area {
+        max-width: 100%;
+        width: calc(100% - 150px);
+        text-align: right;
+        nav {
+            & > ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                & > li {
+                    display: inline-block;
+                    margin-left: 10px;
+                    & > a {
+                        font-size: 15px;
+                        font-weight: 600;
+                        color: $white;
+                        text-decoration: none;
+                        display: inline-block;
+                        padding: 21px 20px;
+                    }
+                    &.dropdown_menu {
+                        position: relative;
+                        & > a {
+                            background-color: $primary_color;
+                            span {
+                                display: inline-block;
+                                padding: 0 10px;
+                            }
+                            .fa-caret-down {
+                                font-size: 22px;
+                                vertical-align: middle;
+                                display: inline-block;
+                                margin-top: -6px;
+                                margin-left: 10px;
+                            }
+                        }
+                        &:hover {
+                            .dropdown_content {
+                                // display: block;
+                            }
+                        }
+                        .dropdown_content {
+                            min-width: 220px;
+                            background-color: $white;
+                            border: solid 1px #d7d7d7;
+                            box-shadow: 0 -1px 3px 0 rgba(0, 0, 0, 0.15);
+                            border-radius: 4px;
+                            position: absolute;
+                            right: 0;
+                            z-index: 3;
+                            // top: -10px;
+                            margin-top: 10px;
+                            display: none;
+                            &.show {
+                                display: block;
+                            }
+                            ul {
+                                margin: 0;
+                                padding: 0;
+                                list-style-type: none;
+                                text-align: left;
+                                padding: 0 10px;
+                                position: relative;
+                                &:after {
+                                    content: "";
+                                    width: 10px;
+                                    height: 10px;
+                                    background-color: $white;
+                                    display: inline-block;
+                                    position: absolute;
+                                    top: -5px;
+                                    right: 20px;
+                                    transform: rotate(45deg);
+                                    z-index: 3;
+                                    box-shadow: 0 -9px 13px 0 rgba(0, 0, 0, 0.15);
+                                }
+                                li {
+                                    a {
+                                        color: $dark_grey;
+                                        font-size: 14px;
+                                        text-decoration: none;
+                                        padding: 10px 5px;
+                                        display: inline-block;
+                                        width: 100%;
+                                    }
+                                    &:not(:first-child) {
+                                        border-top: 1px solid $grey;
+                                    }
+                                    &.active_drodpown_item {
+                                        a {
+                                            color: $primary_color;
+                                            font-weight: bold;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .top_header {
+        .left_area {
+        }
+        .right_area {
+            nav {
+                & > ul {
+                    & > li {
+                        margin-left: 0px;
+                        & > a {
+                            font-size: 13px;
+                            padding: 20px 15px;
+                        }
+                        &.dropdown_menu {
+                            & > a {
+                                span {
+                                }
+                                .fa-caret-down {
+                                    margin-left: 0;
+                                    font-size: 18px;
+                                }
+                            }
+                            &:hover {
+                                .dropdown_content {
+                                    // display: block;
+                                }
+                            }
+                            .dropdown_content {
+                                ul {
+                                    &:after {
+                                    }
+                                    li {
+                                        a {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .top_header {
+        .left_area {
+            width: 100%;
+            text-align: center;
+        }
+        .right_area {
+            width: 100%;
+            text-align: center;
+            nav {
+                & > ul {
+                    & > li {
+                        margin-left: 0px;
+                        & > a {
+                            font-size: 13px;
+                            padding: 20px 10px;
+                        }
+                        &.dropdown_menu {
+                            & > a {
+                                span {
+                                }
+                                .fa-caret-down {
+                                    margin-left: 0;
+                                    font-size: 18px;
+                                }
+                            }
+                            &:hover {
+                                .dropdown_content {
+                                    // display: block;
+                                }
+                            }
+                            .dropdown_content {
+                                ul {
+                                    &:after {
+                                    }
+                                    li {
+                                        a {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .top_header {
+        .right_area {
+            nav {
+                & > ul {
+                    & > li {
+                        & > a {
+                        }
+                        &.dropdown_menu {
+                            width: 100%;
+                            & > a {
+                                width: 100%;
+                                span {
+                                }
+                                .fa-caret-down {
+                                    margin-left: 0;
+                                    font-size: 18px;
+                                }
+                            }
+                            &:hover {
+                                .dropdown_content {
+                                    // display: block;
+                                }
+                            }
+                            .dropdown_content {
+                                left: 0;
+                                right: 0;
+                                ul {
+                                    &:after {
+                                    }
+                                    li {
+                                        a {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

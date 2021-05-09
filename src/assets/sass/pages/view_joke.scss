@@ -1,0 +1,505 @@
+.back_btn {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.view_joke_section {
+    .row {
+        .col-vc {
+            &.left_area {
+                width: 67%;
+                margin-bottom: 50px;
+                .view_joke_area {
+                    background-color: $white;
+                    border: solid 1px #ecebe9;
+                    padding: 20px 20px;
+                    border-radius: 4px;
+                    margin-bottom: 20px;
+                    .joke_meta {
+                        display: inline-flex;
+                        width: 100%;
+                        justify-content: space-between;
+                        margin-bottom: 15px;
+                        .joke_catg {
+                            a {
+                                display: inline-block;
+                                width: 100%;
+                                border: 1px solid $primary_color;
+                                background-color: $primary_color;
+                                color: $white;
+                                padding: 2px 10px 2px 8px;
+                                font-size: 12px;
+                                text-align: center;
+                                font-weight: 600;
+                                text-transform: uppercase;
+                                border-radius: 50px;
+                                &:before {
+                                    content: "";
+                                    width: 4px;
+                                    height: 4px;
+                                    background-color: $white;
+                                    border-radius: 50%;
+                                    display: inline-block;
+                                    vertical-align: middle;
+                                    margin-right: 9px;
+                                    margin-top: -2px;
+                                }
+                                &.green_tag {
+                                    background-color: $green;
+                                    border-color: $green;
+                                }
+                            }
+                        }
+                        .joke_tag {
+                            a {
+                                font-size: 14px;
+                                font-weight: 600;
+                                text-transform: uppercase;
+                                &.trending {
+                                    color: $trending;
+                                }
+                                &.popular {
+                                    color: $popular;
+                                }
+                                &.epic {
+                                    color: $epic;
+                                }
+                                &:before {
+                                    content: "";
+                                    width: 4px;
+                                    height: 4px;
+                                    background-color: $trending;
+                                    border-radius: 50%;
+                                    display: inline-block;
+                                    vertical-align: middle;
+                                    margin-right: 5px;
+                                    margin-top: -2px;
+                                }
+                            }
+                        }
+                    }
+                    .view_joke_title {
+                        display: inline-flex;
+                        width: 100%;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 15px;
+                        h2 {
+                            color: $primary_color;
+                            font-size: 40px;
+                            font-weight: 600;
+                            position: relative;
+                            margin: 0;
+                            width: calc(100% - 70px);
+                            span {
+                                display: inline-block;
+                                background-color: $white;
+                                position: relative;
+                                z-index: 1;
+                                padding-right: 10px;
+                            }
+                            &:after {
+                                content: "";
+                                height: 1px;
+                                width: 100%;
+                                display: inline-block;
+                                background-color: $primary_color;
+                                position: absolute;
+                                left: 0;
+                                right: 0;
+                                top: 50%;
+                            }
+                        }
+                        h6 {
+                            color: $primary_color;
+                            font-size: 14px;
+                            font-weight: 600;
+                            margin: 0;
+                        }
+                    }
+                    .view_joke_content {
+                        p {
+                            font-size: 15px;
+                            line-height: 24px;
+                            color: $body_color;
+                            margin: 0;
+                            &:not(:last-child) {
+                                margin-bottom: 20px;
+                            }
+                        }
+                    }
+                }
+                .joke_actions {
+                    display: inline-flex;
+                    width: 100%;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    .left_action {
+                        ul {
+                            padding: 0;
+                            margin: 0;
+                            list-style-type: none;
+                            li {
+                                text-align: center;
+                                display: inline-block;
+                                width: 50px;
+                                a {
+                                    width: 40px;
+                                    height: 40px;
+                                    min-width: 40px;
+                                    min-height: 40px;
+                                    border-radius: 50%;
+                                    display: inline-flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    margin-bottom: 2px;
+                                }
+                                span {
+                                    display: inline-block;
+                                    width: 100%;
+                                    font-size: 12px;
+                                    font-weight: 600;
+                                }
+                                &.like_btn {
+                                    a {
+                                        background-color: $like;
+                                        &:hover {
+                                            background-color: darken($like, 20%);
+                                        }
+                                    }
+                                    span {
+                                        color: $like;
+                                    }
+                                }
+                                &.dislike_btn {
+                                    a {
+                                        background-color: $dislike;
+                                        &:hover {
+                                            background-color: darken($dislike, 20%);
+                                        }
+                                    }
+                                    span {
+                                        color: $dislike;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .right_actions {
+                        max-width: 280px;
+                        min-width: 280px;
+                        ul {
+                            padding: 0;
+                            margin: 0;
+                            list-style-type: none;
+                            li {
+                                text-align: center;
+                                display: inline-block;
+                                margin-left: 5px;
+                                a {
+                                    background-color: $white;
+                                    border: solid 1px #ecebe9;
+                                    padding: 7px 15px;
+                                    border-radius: 2px;
+                                    display: inline-block;
+                                    color: $primary_color;
+                                    text-transform: uppercase;
+                                    font-weight: 600;
+                                    font-size: 14px;
+                                    line-height: 24px;
+                                    transition: 0.5s;
+                                    i {
+                                        font-size: 22px;
+                                        display: inline-block;
+                                        vertical-align: middle;
+                                        margin-top: -2px;
+                                        position: relative;
+                                        transition: 0.5s;
+                                    }
+                                    &.next_btn {
+                                        &:hover {
+                                            i {
+                                                right: -6px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.right_area {
+                width: 33%;
+                margin-bottom: 50px;
+                .top_jokes {
+                    background-color: $white;
+                    border: solid 1px #ecebe9;
+                    padding: 35px 30px;
+                    border-radius: 4px;
+                    height: 100%;
+                    h5 {
+                        font-size: 15px;
+                        text-transform: uppercase;
+                        color: $body_color;
+                        margin: 0 0 15px;
+                    }
+                    ul {
+                        padding: 0;
+                        margin: 0;
+                        list-style-type: none;
+                        li {
+                            a {
+                                text-decoration: underline;
+                                font-size: 15px;
+                                display: inline-block;
+                                padding: 6px 0;
+                                color: $body_color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .view_joke_section {
+        .row {
+            .col-vc {
+                &.left_area {
+                    width: 60%;
+                    .view_joke_area {
+                        .joke_meta {
+                            .joke_catg {
+                                a {
+                                }
+                            }
+                            .joke_tag {
+                                a {
+                                }
+                            }
+                        }
+                        .view_joke_title {
+                            h2 {
+                                font-size: 32px;
+                                width: calc(100% - 70px);
+                                span {
+                                }
+                                &:after {
+                                }
+                            }
+                            h6 {
+                            }
+                        }
+                        .view_joke_content {
+                            p {
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                    .joke_actions {
+                        .left_action {
+                            ul {
+                                li {
+                                    a {
+                                    }
+                                    span {
+                                    }
+                                }
+                            }
+                        }
+                        .right_actions {
+                            ul {
+                                li {
+                                    a {
+                                        i {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &.right_area {
+                    width: 40%;
+                    .top_jokes {
+                        padding: 35px 20px;
+                        h5 {
+                            font-size: 15px;
+                        }
+                        ul {
+                            li {
+                                a {
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .view_joke_section {
+        .row {
+            .col-vc {
+                &.left_area {
+                    width: 100%;
+                    .view_joke_area {
+                        .joke_meta {
+                            .joke_catg {
+                                a {
+                                }
+                            }
+                            .joke_tag {
+                                a {
+                                }
+                            }
+                        }
+                        .view_joke_title {
+                            h2 {
+                                font-size: 32px;
+                                width: calc(100% - 70px);
+                                span {
+                                }
+                                &:after {
+                                }
+                            }
+                            h6 {
+                            }
+                        }
+                        .view_joke_content {
+                            p {
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                    .joke_actions {
+                        .left_action {
+                            ul {
+                                li {
+                                    a {
+                                    }
+                                    span {
+                                    }
+                                }
+                            }
+                        }
+                        .right_actions {
+                            ul {
+                                li {
+                                    a {
+                                        i {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &.right_area {
+                    width: 100%;
+                    .top_jokes {
+                        padding: 35px 20px;
+                        h5 {
+                            font-size: 15px;
+                        }
+                        ul {
+                            li {
+                                a {
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .view_joke_section {
+        .row {
+            .col-vc {
+                &.left_area {
+                    width: 100%;
+                    .view_joke_area {
+                        .joke_meta {
+                            .joke_catg {
+                                a {
+                                }
+                            }
+                            .joke_tag {
+                                a {
+                                }
+                            }
+                        }
+                        .view_joke_title {
+                            h2 {
+                                font-size: 26px;
+                                width: calc(100% - 70px);
+                                span {
+                                }
+                                &:after {
+                                }
+                            }
+                            h6 {
+                            }
+                        }
+                        .view_joke_content {
+                            p {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                    .joke_actions {
+                        flex-direction: column;
+                        align-items: center;
+                        .left_action {
+                            margin-bottom: 15px;
+                            ul {
+                                li {
+                                    a {
+                                    }
+                                    span {
+                                    }
+                                }
+                            }
+                        }
+                        .right_actions {
+                            ul {
+                                li {
+                                    a {
+                                        i {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &.right_area {
+                    width: 100%;
+                    .top_jokes {
+                        padding: 35px 20px;
+                        h5 {
+                            font-size: 15px;
+                        }
+                        ul {
+                            li {
+                                a {
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
